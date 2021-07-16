@@ -1,5 +1,4 @@
 node {
-    env.REPO = "https://github.com/Vicentezapata/IADSO_CIISA_IECS_REPO_TEST.git"
     //VARIABLES DE ENTORNO
     env.DOCKER = tool 'docker';//Mismo nombre que pusimos // en el global tool configuration
     env.SONARSCANNER = tool 'sonarqube-scanner';//Mismo nombre que pusimos // en el global tool configuration
@@ -27,11 +26,12 @@ node {
             )
         }
         //VARIABLES DE PIPELINE
+        env.REPO        = input.Git_Url
         env.PROJECT     = input.Name_Project.replace(" ","_")
         env.GITPROJECT  = input.Git_Url
         env.TYPEREPO    = input.Type_Repo
         env.CATEGORY    = input.Type_Cat
-        env.EMAIL    = input.Email
+        env.EMAIL       = input.Email
         git input.Git_Url
     }
     stage('Control SAST') {
