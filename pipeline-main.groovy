@@ -5,7 +5,7 @@ node {
     env.DOCKER_EXEC = "${DOCKER}/bin/docker";
     stage('Descargar Codigo (SCM)') {
         sh "echo ${WORKSPACE}"
-        timeout(time: 3, unit: 'MINUTES'){
+        /*timeout(time: 3, unit: 'MINUTES'){
             input = input(
             id: 'userInput', messasge: 'Valores para PMV',
             parameters: [
@@ -24,14 +24,14 @@ node {
                 string(description: 'Correo del destinatario', name: 'Email',defaultValue: 'vicentezapatac@gmail.com')
             ]
             )
-        }
+        }*/
         //VARIABLES DE PIPELINE
-        env.REPO        = input.Git_Url
-        env.PROJECT     = input.Name_Project.replace(" ","_")
-        env.GITPROJECT  = input.Git_Url
-        env.TYPEREPO    = input.Type_Repo
-        env.CATEGORY    = input.Type_Cat
-        env.EMAIL       = input.Email
+        env.REPO        = "https://github.com/Vicentezapata/IADSO_CIISA_IECS_REPO_TEST.git"
+        env.PROJECT     = "IADSO_CIISA_IECS_REPO_TEST"
+        env.GITPROJECT  = "https://github.com/Vicentezapata/IADSO_CIISA_IECS_REPO_TEST.git"
+        env.TYPEREPO    = "Publico"
+        env.CATEGORY    = "WEBPAGE"
+        env.EMAIL       = "vicentezapatac@gmail.com"
         git input.Git_Url
     }
     stage('Control SAST') {
