@@ -55,9 +55,9 @@ node {
                 if [ $( ${DOCKER_EXEC} ps -a | grep  apache-app | wc -l ) -gt 0 ]; then
                     echo '** Contenedor apache-app existente se procede a eliminar y volver a crear.'
                     ${DOCKER_EXEC} rm -f apache-app
-                    ${DOCKER_EXEC} run -dit --name apache-app -p 8085:80 -v '/home/ciisa/Escritorio/Proyecto de titulo//jenkins-scripts/servidores_DAST/apache/':/usr/local/apache2/htdocs/ httpd:2.4
+                    ${DOCKER_EXEC} run -dit --name apache-app -p 8085:80 -v '/home/proyecto/CODERIUM_CIISA_IECS-architecture/jenkins-scripts/servidores_DAST/apache/':/usr/local/apache2/htdocs/ httpd:2.4
                 else
-                    ${DOCKER_EXEC} run -dit --name apache-app -p 8085:80 -v '/home/ciisa/Escritorio/Proyecto de titulo//jenkins-scripts/servidores_DAST/apache/':/usr/local/apache2/htdocs/ httpd:2.4
+                    ${DOCKER_EXEC} run -dit --name apache-app -p 8085:80 -v '/home/proyecto/CODERIUM_CIISA_IECS-architecture/jenkins-scripts/servidores_DAST/apache/':/usr/local/apache2/htdocs/ httpd:2.4
                 fi
             '''
         }
