@@ -32,7 +32,7 @@ node {
         env.TYPEREPO    = "Publico"
         env.CATEGORY    = "WEBPAGE"
         env.EMAIL       = "vicentezapatac@gmail.com"
-        git input.Git_Url
+        git env.REPO
     }
     stage('Control SAST') {
         // requires SonarQube Scanner 2.8+
