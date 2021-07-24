@@ -1,0 +1,273 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+        .register {
+            background: -webkit-linear-gradient(left, #3931af, #00c6ff);
+            padding: 3%;
+        }
+
+        .register-left {
+            text-align: center;
+            color: #fff;
+            margin-top: 4%;
+        }
+
+        .register-left input {
+            border: none;
+            border-radius: 1.5rem;
+            padding: 2%;
+            width: 60%;
+            background: #f8f9fa;
+            font-weight: bold;
+            color: #383d41;
+            margin-top: 30%;
+            margin-bottom: 3%;
+            cursor: pointer;
+        }
+
+        .register-right {
+            background: #f8f9fa;
+            border-top-left-radius: 10% 50%;
+            border-bottom-left-radius: 10% 50%;
+        }
+
+        .register-left img {
+            margin-top: 15%;
+            margin-bottom: 5%;
+            width: 25%;
+            -webkit-animation: mover 2s infinite alternate;
+            animation: mover 1s infinite alternate;
+        }
+
+        @-webkit-keyframes mover {
+            0% {
+                transform: translateY(0);
+            }
+
+            100% {
+                transform: translateY(-20px);
+            }
+        }
+
+        @keyframes mover {
+            0% {
+                transform: translateY(0);
+            }
+
+            100% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .register-left p {
+            font-weight: lighter;
+            padding: 12%;
+            margin-top: -9%;
+        }
+
+        .register .register-form {
+            padding: 10%;
+            margin-top: 10%;
+        }
+
+        .btnRegister {
+            float: right;
+            margin-top: 10%;
+            border: none;
+            border-radius: 1.5rem;
+            padding: 2%;
+            background: #0062cc;
+            color: #fff;
+            font-weight: 600;
+            width: 50%;
+            cursor: pointer;
+        }
+
+        .register .nav-tabs {
+            margin-top: 3%;
+            border: none;
+            background: #0062cc;
+            border-radius: 1.5rem;
+            width: 28%;
+            float: right;
+        }
+
+        .register .nav-tabs .nav-link {
+            padding: 2%;
+            height: 34px;
+            font-weight: 600;
+            color: #fff;
+            border-top-right-radius: 1.5rem;
+            border-bottom-right-radius: 1.5rem;
+        }
+
+        .register .nav-tabs .nav-link:hover {
+            border: none;
+        }
+
+        .register .nav-tabs .nav-link.active {
+            width: 100px;
+            color: #0062cc;
+            border: 2px solid #0062cc;
+            border-top-left-radius: 1.5rem;
+            border-bottom-left-radius: 1.5rem;
+        }
+
+        .register-heading {
+            text-align: center;
+            /*margin-top: 8%;*/
+            margin-bottom: -15%;
+            color: #495057;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <!-- Fixed navbar -->
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top shadow p-3"
+            style="background: -webkit-linear-gradient(left, #3931af, #00c6ff)">
+            <div class="container-fluid">
+                <img src="Letras.png" alt="" width="180" height="24">
+            </div>
+        </nav>
+    </header>
+    <div class="container register col-12">
+        <div class="row">
+            <div class="col-md-3 register-left">
+                <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt="">
+                <h3>Bienvenido</h3>
+                <p>Estas a 30 segundo de comenzar a analizar tu proyecto, una vez terminado te enviaremos un correo con
+                    la informacion de la ejecucion.</p>
+            </div>
+            <div class="col-md-9 register-right">
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade active show" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <div class="col-md-12 text-center mt-5">
+                            <img class="m-0 w-25" src="Logo.gif">
+                        </div>
+                        <h3 class="register-heading">Formulario de analisis</h3>
+                        <div class="row register-form">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input id="nomProyect" type="text" class="form-control" placeholder="Nombre del proyecto *"
+                                        value="">
+                                </div>
+                                <div class="form-group">
+                                    <input id="urlProject" type="text" class="form-control" placeholder="Url del repositorio *"
+                                        value="">
+                                </div>
+                                <div class="form-group">
+                                    <select id="tpCat" class="form-control">
+                                        <option class="hidden" selected="" disabled="">Selecciona el tipo de categoria
+                                            de analisis</option>
+                                        <option>Webpage</option>
+                                        <option>Aplicacion android</option>
+                                        <option>Python</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input id="email" type="email" class="form-control" placeholder="Email solicitante *" value="">
+                                </div>
+                                <div class="form-group">
+                                    <select id="tpRepo" class="form-control">
+                                        <option class="hidden" selected="" disabled="">Selecciona el tipo de repositorio
+                                        </option>
+                                        <option>Publico</option>
+                                        <option>Privado</option>
+                                    </select>
+                                </div>
+                                <input type="submit" class="btnRegister" value="Enviar" onclick="enviar()">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- Footer -->
+    <footer class="footer mt-auto py-3 bg-dark text-center">
+        <div class="container txt-center">
+            <div class="row ">
+                <div class="col-4">
+                    <h4 class="text-light">Ubicación.</h4>
+                    <p class="text-light lead mb-0">Santiago<br>Región Metropolitana</p>
+                </div>
+                <div class="col-4">
+                    <h4 class="text-light">Encuentranos en.</h4>
+                    <p class="text-light lead mb-0">Linkedin<br>CODERIUM</p>
+                </div>
+                <div class="col-4">
+                    <h4 class="text-light">Informaciones.</h4>
+                    <p class="text-light lead mb-0">Telefono<br>+56 9 11223344</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="copyright py-4 text-center  text-white" style="background:#000000">
+        <div class="container">
+            <small>© CODERIUM 2021</small>
+        </div>
+    </div>
+    <script type="text/javascript">
+        function enviar() {
+            Swal.fire({
+                title: '¿Estas seguro?',
+                text: "No podras revertir esta solicitud!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                cancelButtonText: 'No',
+                confirmButtonText: 'Si'
+            }).then((result) => {
+                nomProyect = $( "#nomProyect" ).val()
+                urlProject = $( "#urlProject" ).val()
+                tpCat      = $( "#tpCat" ).val()
+                email      = $( "#email" ).val()
+                tpRepo     = $( "#tpRepo" ).val()
+                $.ajax({
+                        url:"localhost:8081/job/PMV/build?token=ciisa2021",
+                        type:"POST",
+                        dataType:'json',
+                        data:{nomProyect:nomProyect,urlProject:urlProject, tpCat:tpCat,email:email,tpRepo:tpRepo },
+                        success:function(data){
+                            if(data.success){
+                                Swal.fire(
+                                'Eliminado!',
+                                'Su solicitud ha sido aceptada.',
+                                'success'
+                                );
+                            }
+                            else if(data.error){
+                                Swal.fire(
+                                'Error',
+                                data.error,
+                                'error'
+                                );
+                            }
+                        },
+                        error: function (jqXHR, textStatus, errorThrown) { 
+                            //SI FALLA (RESPONSE 500) MOSTRAR ALERT DE FALLO
+                            Swal.fire(
+                                'Error!',
+                                    errorThrown,
+                                'error'
+                            );
+                        }
+                    });
+            })
+        }
+    </script>
+</body>
+
+</html>
