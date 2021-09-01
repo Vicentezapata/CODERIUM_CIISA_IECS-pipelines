@@ -89,7 +89,7 @@ node {
         println "**************************************************************************************************"
         println "*                                   Procesando Reportes                                          *"
         println "**************************************************************************************************" 
-        sh "rm ${WORKSPACE}/'INFORME DE VULNERABILIDADES - ${PROJECT}.pdf'"
+        //sh "rm ${WORKSPACE}/'INFORME DE VULNERABILIDADES - ${PROJECT}.pdf'"
         sh "java -jar /opt/scripts/api-sonarqube-report.jar admin ciisa2021 http://sonarqube:9000 /opt/scripts/OutputRapidscan.txt /opt/scripts/OutputTrivyJson.txt ${TYPEREPO} ${CATEGORY} ${GITPROJECT} ${PROJECT}"
         sh "cp ${WORKSPACE}/'INFORME DE VULNERABILIDADES - ${PROJECT}.pdf'	/opt/scripts/"
     }
